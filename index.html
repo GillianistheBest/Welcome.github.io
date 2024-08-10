@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+  
+    body{
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .recipe {
+      width: 200px;
+      height: 300px;
+      background-color: hotpink;
+      padding: 10px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-left: 20px;
+    }
+
+    .recipe img {
+      width: 200px;
+      height: 250px;
+      border: 2px hotpink solid;
+    }
+
+    .recipe button {
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      margin: 0 auto;
+    }
+
+    .all-recipes {
+      display: flex;
+      align-items: center;
+    }
+
+    .recipe .back {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Select a Recipe!</h1>
+
+  <div class="all-recipes">
+    <div class= "recipe">
+      <div class="front" id="front1">
+        <img src= "Water.png" alt= "water">
+        <p>Water</p>
+        <button onclick= "recipe11 ()">front</button>
+      </div>
+      <div class="back" id="back1">
+        <ol>
+          <li>go to sink</li>
+          <li>done</li>
+        </ol>
+        <button onclick= "recipe11 ()">back</button>
+    </div>
+
+    <div class= "recipe1">
+      <div class="front" id="front2">
+        <img src= "Toast.png" alt= "toast">
+        <p>toast</p>
+        <button onclick= "recipe22 ()">front</button>
+      </div>
+      <div class="back" id="back2">
+        <ol>
+          <li>get bread</li>
+          <li>put in oven</li>
+        </ol>
+        <button onclick= "recipe22 ()">back</button>
+    </div>
+  </div>
+
+  <script>
+    var recipe1 = true;
+    var recipe2 = true;
+    
+    function recipe11 () {
+      var front= document.getElementById("front1");
+      var back= document.getElementById("back1");
+
+      if (recipe1 == true){
+        front.style.display = "none";
+        back.style.display = "flex";
+        back.style.flexDirection = "column";
+        back.style.alignItems = "center";
+      }
+      if (recipe1 == false){
+        front.style.display = "flex";
+        back.style.display = "none";
+        front.style.flexDirection = "column";
+        front.style.alignItems = "center";
+      }
+      
+      recipe1 = ! recipe1;
+    }
+
+
+    function recipe22 () {
+      var front= document.getElementById("front2");
+      var back= document.getElementById("back2");
+
+
+      if (recipe2 == true){
+        front.style.display = "none";
+        back.style.display = "flex";
+        back.style.flexDirection = "column";
+        back.style.alignItems = "center";
+      }
+      if (recipe2 == false){
+        front.style.display = "flex";
+        back.style.display = "none";
+        front.style.flexDirection = "column";
+        front.style.alignItems = "center";
+      }
+
+      recipe2 = ! recipe2;
+    }
+  </script>
+    
+
+
+  
+</body>
+
+</html>
